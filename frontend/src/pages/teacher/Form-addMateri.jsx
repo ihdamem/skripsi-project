@@ -1,7 +1,6 @@
 import {
   Flex,
   Box,
-  Container,
   Stack,
   Link,
   Button,
@@ -11,19 +10,19 @@ import {
   Spinner,
   Heading,
   Select,
-} from '@chakra-ui/react';
-import Footer from '../../component/Footer';
-import Forminput from '../../component/Forminput';
-import FormInputFile from '../../component/FormInputFile';
-import useFormHook from '../../hooks/useFormHook';
-import { useQuill } from 'react-quilljs';
-import 'quill/dist/quill.snow.css';
-import { useEffect, useState } from 'react';
-import useCoursesStore from '../../store/coursesStore';
-import useRoadmapStore from '../../store/roadmapStore';
-import uploadImage from '../../services/uploadImageApi';
-import { storeCourses } from '../../services/coursesApi';
-import { useNavigate, useParams } from 'react-router-dom';
+} from "@chakra-ui/react";
+import Footer from "../../component/Footer";
+import Forminput from "../../component/Forminput";
+import useFormHook from "../../hooks/useFormHook";
+import { useQuill } from "react-quilljs";
+import "quill/dist/quill.snow.css";
+import { useEffect, useState } from "react";
+import useCoursesStore from "../../store/coursesStore";
+import useRoadmapStore from "../../store/roadmapStore";
+import uploadImage from "../../services/uploadImageApi";
+import { storeCourses } from "../../services/coursesApi";
+import { useNavigate, useParams } from "react-router-dom";
+import FormInputFile from "../../component/FormInputFIle";
 
 /**
  *
@@ -53,7 +52,7 @@ export default function FormAddMateri() {
       title: value.title,
     });
     if (error) return;
-    navigate('/dashboard/teacher?view=courses');
+    navigate("/dashboard/teacher?view=courses");
   };
 
   useEffect(() => {
@@ -83,15 +82,15 @@ export default function FormAddMateri() {
         </Box>
       )}
       <Flex
-        minH={'100vh'}
-        justify={'center'}
-        bg={useColorModeValue('white', 'gray.700')}
+        minH={"100vh"}
+        justify={"center"}
+        bg={useColorModeValue("white", "gray.700")}
       >
-        <Stack mx={'auto'} maxW={'1000px'} w={'100%'} py={8} px={4}>
+        <Stack mx={"auto"} maxW={"1000px"} w={"100%"} py={8} px={4}>
           <Box
-            rounded={'lg'}
-            bg={useColorModeValue('gray.50', 'gray.800')}
-            boxShadow={'lg'}
+            rounded={"lg"}
+            bg={useColorModeValue("gray.50", "gray.800")}
+            boxShadow={"lg"}
             p={8}
           >
             {courses ? (
@@ -105,18 +104,18 @@ export default function FormAddMateri() {
                 label="Thumbnail"
                 //harusnya image ya?
                 type="file"
-                onChange={onChange('thumbnail')}
+                onChange={onChange("thumbnail")}
               />
               <Forminput
                 id="judul"
                 label="Judul"
                 type="text"
-                onChange={onChange('title')}
+                onChange={onChange("title")}
               />
               {/* <Textarea/> */}
               <FormControl>
                 <FormLabel>Pilih profesi</FormLabel>
-                <Select placeholder="Profesi" onChange={onChange('roadmap')}>
+                <Select placeholder="Profesi" onChange={onChange("roadmap")}>
                   {roadmapOption &&
                     roadmapOption.map((roadmap, i) => (
                       <option value={roadmap.id} key={i}>
@@ -130,15 +129,15 @@ export default function FormAddMateri() {
                 <div ref={quillRef} />
               </FormControl>
               <Stack spacing={10}>
-                <Flex justify={'space-between'}>
-                  <Link mr={10} color={'#36435A'} type="submit">
+                <Flex justify={"space-between"}>
+                  <Link mr={10} color={"#36435A"} type="submit">
                     Save as draft
                   </Link>
                   <Button
-                    bg={'#36435A'}
-                    color={'white'}
+                    bg={"#36435A"}
+                    color={"white"}
                     _hover={{
-                      bg: '#8C8E93',
+                      bg: "#8C8E93",
                     }}
                     type="submit"
                   >

@@ -9,16 +9,16 @@ import {
   HStack,
   Box,
   Spinner,
-} from '@chakra-ui/react';
-import Footer from '../../component/Footer';
-import Forminput from '../../component/Forminput';
-import { Link as ReactLink, useNavigate, useParams } from 'react-router-dom';
-import useFormHook from '../../hooks/useFormHook';
-import FormInputFile from '../../component/FormInputFile';
-import { useState, useLayoutEffect, useEffect } from 'react';
-import useRoadmapStore from '../../store/roadmapStore';
-import uploadImage from '../../services/uploadImageApi';
-import { storeRoadmap } from '../../services/roadmapApi';
+} from "@chakra-ui/react";
+import Footer from "../../component/Footer";
+import Forminput from "../../component/Forminput";
+import { Link as ReactLink, useNavigate, useParams } from "react-router-dom";
+import useFormHook from "../../hooks/useFormHook";
+import { useState, useLayoutEffect, useEffect } from "react";
+import useRoadmapStore from "../../store/roadmapStore";
+import uploadImage from "../../services/uploadImageApi";
+import { storeRoadmap } from "../../services/roadmapApi";
+import FormInputFile from "../../component/FormInputFIle";
 
 /**
  * Halaman Form add profesi
@@ -53,7 +53,7 @@ export default function FormAddProfesi() {
         thumbnail: url,
       });
       if (error) console.log(error);
-      navigate('/dashboard/teacher?view=roadmap');
+      navigate("/dashboard/teacher?view=roadmap");
     }
   };
 
@@ -76,13 +76,13 @@ export default function FormAddProfesi() {
         </Box>
       )}
       <Container
-        maxW={'container.lg'}
+        maxW={"container.lg"}
         width="full"
         mb="15rem"
         mt="5rem"
-        rounded={'lg'}
-        bg={'gray.50'}
-        boxShadow={'lg'}
+        rounded={"lg"}
+        bg={"gray.50"}
+        boxShadow={"lg"}
         p={8}
       >
         {roadmap ? (
@@ -93,24 +93,24 @@ export default function FormAddProfesi() {
         <VStack as="form" onSubmit={handleSubmit(onSubmit)} mt="1rem" gap={2}>
           <FormInputFile
             label="Add thumbnail"
-            value={roadmap ? roadmap.thumbnail : ''}
-            onChange={onChange('thumbnail')}
+            value={roadmap ? roadmap.thumbnail : ""}
+            onChange={onChange("thumbnail")}
           />
           <Forminput
             id="nama"
             label="Nama"
             type="text"
-            value={roadmap ? roadmap.title : ''}
-            onChange={onChange('nama')}
+            value={roadmap ? roadmap.title : ""}
+            onChange={onChange("nama")}
           />
           <FormControl>
             <FormLabel htmlFor="deskripsi">Deskripsi</FormLabel>
             <Textarea
-              onChange={onChange('deskripsi')}
-              value={roadmap ? roadmap.description : ''}
+              onChange={onChange("deskripsi")}
+              value={roadmap ? roadmap.description : ""}
             />
           </FormControl>
-          <HStack w={'full'} justifyContent="space-between">
+          <HStack w={"full"} justifyContent="space-between">
             <Button variant="ghost" as={ReactLink} to="/dashboard/teacher">
               Kembali
             </Button>

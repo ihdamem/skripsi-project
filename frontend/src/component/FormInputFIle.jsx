@@ -7,16 +7,16 @@ import {
   Input,
   Text,
   VStack,
-} from '@chakra-ui/react';
-import { useState, useEffect } from 'react';
-import { FcAddImage } from 'react-icons/fc';
+} from "@chakra-ui/react";
+import { useState } from "react";
+import { FcAddImage } from "react-icons/fc";
 
 export default function FormInputFile({ onChange, label }) {
   const [photo, setPhoto] = useState();
 
   return (
     <Box
-      w={'full'}
+      w={"full"}
       minHeight="200px"
       borderWidth="2px"
       borderColor="gray.300"
