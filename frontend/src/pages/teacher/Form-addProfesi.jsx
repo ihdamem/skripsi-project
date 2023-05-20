@@ -93,14 +93,12 @@ export default function FormAddProfesi() {
         <VStack as="form" onSubmit={handleSubmit(onSubmit)} mt="1rem" gap={2}>
           <FormInputFile
             label="Add thumbnail"
-            value={roadmap ? roadmap.thumbnail : ""}
             onChange={onChange("thumbnail")}
           />
           <Forminput
             id="nama"
             label="Nama"
             type="text"
-            value={roadmap ? roadmap.title : ""}
             onChange={onChange("nama")}
           />
           <FormControl>
